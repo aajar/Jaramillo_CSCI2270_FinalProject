@@ -130,9 +130,9 @@ void HashTable::findEntry(string name)
 }
 
 /*
- void HashTable::insertDelete(Entry newFile)
+ void HashTable::DeleteEntry(string name);
  
- Takes an Entry struct and sum hashes it, then adds it to the appropriate index in the hash table, using chaining for collision resolution.
+ Takes an Entry struct's name and sum hashes it, then adds it to the appropriate index in the hash table, using chaining for collision resolution.
  
  Pre-Condition: a HashTable constructed. and the Entry struct already constructed.
  Post: An Entry node added to the hash table.

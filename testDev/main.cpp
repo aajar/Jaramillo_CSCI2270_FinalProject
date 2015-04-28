@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
     HashTable fileTable(10);
     int menuChoice = 0;
     
-    while(menuChoice < 4)
+    while(menuChoice < 5)
     {
         menuChoice = menuChooser();
 
@@ -73,6 +73,12 @@ int main(int argc, const char * argv[]) {
             
         }else if(menuChoice == 3){
             fileTable.printEntries();
+        }else if(menuChoice == 4){
+            string name;
+            cin.ignore(1000, '\n');
+            cout << "Enter the name of an entry to delete" << endl;
+            getline(cin, name);
+            fileTable.deleteEntry(name);
         }
         
     }

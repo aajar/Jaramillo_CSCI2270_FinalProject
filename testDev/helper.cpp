@@ -53,7 +53,8 @@ int menuChooser()
     cout << "1. Get Hashed Address" << endl;
     cout << "2. Search saved hashes" << endl;
     cout << "3. Show all entries" << endl;
-    cout << "4. Exit" << endl;
+    cout << "4. Delete an Entry" << endl;
+    cout << "5. Exit" << endl;
     
     int menuChoice;
     cin >> menuChoice;
@@ -65,7 +66,7 @@ int menuChooser()
  Function to read in a file by byte (uint8_t) and into
  data_chunk, the libbitcoin equivelent of vector<uint8_t>.
  ===============
- !!!!Broken!!!!
+ 
  ===============
  
  
