@@ -113,6 +113,11 @@ int main(int argc, const char * argv[]) {
     
     hash_digest fileHash = sha256_hash(file);
     string hash = encode_hex(fileHash);
+     ************************************************************
+     *********** Trouble connecting to the Obelisk server *******
+     *********** which is neccesary to automattically get *******
+     *********** unspent outputs for the newTX inputs     *******
+     ************************************************************
      
     connection_type connection;
     connection.server = primitives::uri("tcp://obelisk.airbitz.co:9091");
