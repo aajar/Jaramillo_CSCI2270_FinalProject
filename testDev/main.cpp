@@ -42,15 +42,9 @@ using namespace bc::explorer::primitives;
 
 
 
-
-
-
-
-
 int main(int argc, const char * argv[]) {
     HashTable fileTable(10);
     int menuChoice = 0;
-    
     
     while(menuChoice < 4)
     {
@@ -58,17 +52,22 @@ int main(int argc, const char * argv[]) {
 
         if(menuChoice == 1)
         {
-            string name;
+            string filename;
             cout << "Enter a File Name" << endl;
+            getline(cin, filename);
+            string name;
+            cout << "Enter a File Nickname" << endl;
             cin.ignore(1000, '\n');
             getline(cin, name);
             payment_address fileAddress;
-            hash_digest fileHash;
             cout << "Enter the date" << endl;
             string date;
             getline(cin, date);
-            fileAddress = HashtoAddress();
-            Entry newFile(name, fileAddress, fileHash, date);
+            data_chunk fileByte = readFileBytes(filename);
+            hash_digest hash = fileHasher(fileByte);
+
+            fileAddress = HashtoAddress(fileByte);
+            Entry newFile(name, fileAddress, hash, date);
             fileTable.insertEntry(newFile);
             cout << newFile.address.encoded() << endl;
             
@@ -91,6 +90,9 @@ int main(int argc, const char * argv[]) {
     
 
     /*
+     ==================Attempt===============
+     === failed attempt to create an OP_Return transaction==
+     === The ideal method to attach a hash to the blockchain==
     data_chunk data = decode_hex("Aaron Jaramillo");
     data_slice newData = base16(data);
     short_hash hashData = ripemd160_hash(newData);

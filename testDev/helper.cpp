@@ -37,16 +37,16 @@ using namespace bc::explorer;
 using namespace bc::explorer::commands;
 using namespace bc::explorer::primitives;
 
-void displayMenu()
-{
-    
-    cout << "====Main Menu =====" << endl;
-    cout << "1. Get Hashed Address" << endl;
-    cout << "2. search saved hashes" << endl;
-    cout << "3. show hash information" << endl;
-    
-}
 
+/*
+ int menuChoose()
+ 
+ Method displays the main menu to the user and returns the number
+ they chose as an int.
+ 
+ 
+ 
+ */
 int menuChooser()
 {
     cout << "====Main Menu =====" << endl;
@@ -59,16 +59,51 @@ int menuChooser()
     cin >> menuChoice;
     return menuChoice;
 }
-hash_digest fileHash()
+/*
+ data_chunk readFileBytes(string name)
+
+ Function to read in a file by byte (uint8_t) and into
+ data_chunk, the libbitcoin equivelent of vector<uint8_t>.
+ ===============
+ !!!!Broken!!!!
+ ===============
+ 
+ 
+ */
+data_chunk readFileBytes(string name)
 {
-    data_chunk data = decode_hex("Aaron Jaramillo");
-    hash_digest shaed = sha256_hash(data);
+    basic_ifstream<uint8_t> fl(name);
+    
+    uint8_t someByte;
+    data_chunk fileChunk;
+    while(!fl.eof())
+    {
+        fl >> someByte;
+        data_chunk fileChunk(uint8_t someByte);
+    }
+    fl.close();
+    return fileChunk;
+}
+
+hash_digest filehasher(data_chunk fileData)
+{
+    hash_digest shaed = sha256_hash(fileData);
+    
     return shaed;
 }
-payment_address HashtoAddress()
+/*
+ payment_address HashtoAddress(data_chunk fileByte);
+ 
+ this FUnction takes a data_chunk and sha256 hashes it. 
+ then passes a version type and ripemd160 hash of the previous hash into a payment_address class constructor, which then encodes it to a readable BTC address of the specified version type. 
+ 
+ 
+ 
+ */
+payment_address HashtoAddress(data_chunk fileByte)
 {
-    data_chunk data = decode_hex("Aaron Jaramillo");
-    hash_digest shaed = sha256_hash(data);
+    
+    hash_digest shaed = sha256_hash(fileByte);
     payment_address hashAddy(uint8_t(1), ripemd160_hash(shaed));
     cout << hashAddy.encoded() << endl;
     

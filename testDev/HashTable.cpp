@@ -15,7 +15,12 @@
 
 
 using namespace std;
-
+/*
+ 
+ 
+ 
+ 
+ */
 HashTable::HashTable(int size)
 {
     hashTable = new Entry[size];
@@ -27,7 +32,17 @@ HashTable::~HashTable()
     hashTable = NULL;
     delete hashTable;
 }
+/*
+ void HashTable::insertEntry(Entry newFile)
 
+ Takes an Entry struct and sum hashes it, then adds it to the appropriate index in the hash table, using chaining for collision resolution. 
+ 
+ Pre-Condition: a HashTable constructed. and the Entry struct already constructed. 
+ Post: An Entry node added to the hash table.
+ 
+ 
+ 
+ */
 void HashTable::insertEntry(Entry newFile)
 {
     
@@ -65,6 +80,16 @@ void HashTable::insertEntry(Entry newFile)
     }
     
 }
+/*
+ void HashTable::findEntry(string name)
+
+ Takes a string and searches through the hash table and the appropriate linked lists to find an entry with that string as its 'name'. 
+ 
+ Pre: A constructed Hash Table. Handles Not Found.
+ 
+ 
+ 
+ */
 void HashTable::findEntry(string name)
 {
     Entry* userEntry = NULL;
@@ -104,43 +129,6 @@ void HashTable::findEntry(string name)
     
 }
 /*
-Movie* HashTable::sort(Movie* list, int x, int i)
-{
-    for (int j = 0; j < x; j++)
-    {
-        Movie* working = &list[j];
-        if(working -> year == 0)
-        {
-            
-        }else{
-            for(int z = 0; z < x; z++)
-            {
-                string compare = list[z].title;
-                int yearCheck = list[z].year;
-                if(working -> title > compare && yearCheck != 0 && working -> year != 0)
-                {
-                    working = &list[z];
-                }
-            }
-            cout << i << ":" << working -> title << ":" << working -> year << endl;
-            for(int q = 0; q < x; q++)
-            {
-                if(working == &list[q])
-                {
-                    Movie empty = Movie();
-                    list[q] = empty;
-                }
-            }
-            
-        }
-        working = NULL;
-        delete working;
-    }
-    
-    
-    
-    return list;
-}
 
 void HashTable::deleteMovie(string title)
 {
@@ -175,25 +163,18 @@ void HashTable::deleteMovie(string title)
     
 }
 
-void HashTable::shuffle(Movie* a, Movie* b)
-{
-    //
-}
-
-
-
-
-void HashTable::sort(int i)
-{
-    Entry* current;
-    current = &hashTable[i];
-    while(current -> next != NULL)
-    {
-        // hashTable[i].length;
-    }
-}
 */
 
+/*
+ void HashTable::printEntries()
+
+ This Function prints out all of the Entries in the Hash Tables by searching through the indecies and appropriate chains. Handles empty.
+ 
+ Pre: A constructed hash table
+ 
+ 
+ 
+ */
 void HashTable::printEntries()
 {
     int i = 0;

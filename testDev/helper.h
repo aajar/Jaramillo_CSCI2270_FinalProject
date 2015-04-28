@@ -43,8 +43,9 @@ using namespace bc::explorer::primitives;
 void displayMenu();
 
 int menuChooser();
-hash_digest fileHash();
-payment_address HashtoAddress();
+data_chunk readFileBytes(string name);
+hash_digest fileHasher(data_chunk);
+payment_address HashtoAddress(data_chunk);
 
 
 
