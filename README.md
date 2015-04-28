@@ -1,19 +1,19 @@
 # Jaramillo_CSCI2270_FinalProject
 CSCI2270 Final Project Repository
 
-Contango Project
+ShaNotary Project
 
 Project Summary 
 
-Contango is an open source Arbitrage trading bot which trades on OKcoin.com futures and spot bitcoin markets. Contango checks the the premium cost on bitcoin futures contracts compared to the spot price and executes inverse trades accordingly in order to arbitrage the premium between the two instruments. Contango uses RestSDK to connect with OKcoin’s api and execute trades quickly. 
+ShaNotary is a crypto graphic proof-of-existence program using the bitcoin blockchain. ShaNotary takes the sha256 hash of a file and hashes it using ripemd160 and then encoded the resulting hash to a bitcoin address, once a transaction is sent to the address it is permenantly recorded on the blockchain. ShaNotary uses libbitcoin and libbitcoin-explorer for bitcoin hash functions. 
 
 How to Run
 
-First, Follow the instructions in the Config file to set your preferences on simulated trading vs live trading; your api keys; which pair you want to trade; LTC/BTC, and your price threshold. 
+First, Follow the on screen menu to create a bitcoin address from the file hash. then send a small amount of bitcoin to the address(these coins are irretrivable). 
 
 
 Dependencies
-This project uses the c++ library RestSDK to work with okcoins api. 
+This project uses the c++ library libbitcoin and libbitcoin-explorer;
 
 
 
