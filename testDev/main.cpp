@@ -5,7 +5,6 @@
 //  Created by ipaperweight on 4/20/15.
 //  Copyright (c) 2015 AaronJaramillo. All rights reserved.
 //
-//#include<json/json.h>
 #include "helper.h"
 #include "HashTable.h"
 #include <iostream>
@@ -26,7 +25,6 @@
 #include <bitcoin/explorer/commands/address-embed.hpp>
 #include <bitcoin/explorer/utility.hpp>
 
-//#include <wallet/wallet.hpp>
 
 using namespace std;
 using namespace bc;
@@ -35,12 +33,6 @@ using namespace bc;
 using namespace bc::explorer;
 using namespace bc::explorer::commands;
 using namespace bc::explorer::primitives;
-
-//using namespace libwallet;
-
-#define ADDRESS_EMBED_SCRIPT "dup hash160 [ %1% ] equalverify checksig"
-
-
 
 int main(int argc, const char * argv[]) {
     HashTable fileTable(10);
@@ -90,9 +82,11 @@ int main(int argc, const char * argv[]) {
     
 
     /*
-     ==================Attempt===============
-     === failed attempt to create an OP_Return transaction==
+     ==================Attempt================================
+     === failed attempt to create an OP_Return transaction====
      === The ideal method to attach a hash to the blockchain==
+     =========================================================
+     
     data_chunk data = decode_hex("Aaron Jaramillo");
     data_slice newData = base16(data);
     short_hash hashData = ripemd160_hash(newData);

@@ -128,29 +128,58 @@ void HashTable::findEntry(string name)
     }
     
 }
-/*
 
-void HashTable::deleteMovie(string title)
+/*
+ void HashTable::insertDelete(Entry newFile)
+ 
+ Takes an Entry struct and sum hashes it, then adds it to the appropriate index in the hash table, using chaining for collision resolution.
+ 
+ Pre-Condition: a HashTable constructed. and the Entry struct already constructed.
+ Post: An Entry node added to the hash table.
+ 
+ 
+ 
+ */
+void HashTable::deleteEntry(string name)
 {
+    Entry* userEntry = NULL;
+    Entry* current = NULL;
     int sum = 0;
-    for(int i = 1; i < title.length(); i++)
+    for(int i = 1; i < name.length(); i++)
     {
-        sum = sum + title[i];
+        sum = sum + name[i];
     }
     sum = sum % tableSize;
-    if(hashTable[sum].title == title)
+    if(hashTable[sum].name.length() > 0)
     {
-        if (hashTable[sum].next == NULL)
+        if(hashTable[sum].name == name)
         {
-            hashTable[sum] = Movie();
+            userEntry = &hashTable[sum];
+        }else{
+            while(current -> name.length() > 0)
+            {
+                if(current -> name == name)
+                {
+                    userEntry = current;
+                }else{
+                    current = current -> next;
+                }
+            }
+        }
+    }
+    if(userEntry -> name == name)
+    {
+        if (userEntry -> next == NULL)
+        {
+           delete &userEntry;
         }else {
-            hashTable[sum] = *hashTable[sum].next;
+            userEntry = userEntry -> next;
         }
     }else{
-        Movie* current;
-        Movie* previous = NULL;
+        Entry* current;
+        Entry* previous = NULL;
         current = &hashTable[sum];
-        while (current -> title != title)
+        while (current -> name != name)
         {
             previous = current;
             current = current -> next;
@@ -163,7 +192,7 @@ void HashTable::deleteMovie(string title)
     
 }
 
-*/
+
 
 /*
  void HashTable::printEntries()

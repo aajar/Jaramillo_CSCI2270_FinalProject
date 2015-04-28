@@ -69,7 +69,7 @@ public:
     ~HashTable();
     void insertEntry(Entry);
     void findEntry(string);
-    //void deleteMovie(string in_title);
+    void deleteEntry(string);
     void printEntries();
     //void sort(int i);
     //void shuffle(Entry*, Entry*);
