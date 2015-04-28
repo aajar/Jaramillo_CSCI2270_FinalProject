@@ -28,20 +28,20 @@ HashTable::~HashTable()
     delete hashTable;
 }
 
-void HashTable::insertMovie(string title, int year)
+void HashTable::insertEntry(Entry newFile)
 {
     
     
     
     int sum = 0;
-    for(int i = 1; i < title.length(); i++)
+    for(int i = 1; i < newFile.name.length(); i++)
     {
-        sum = sum + title[i];
+        sum = sum + newFile.name[i];
     }
     sum = sum % tableSize;
-    if(hashTable[sum].year == 0)
+    if(hashTable[sum].date == "0")
     {
-        hashTable[sum] = Movie(title, year);
+        hashTable[sum] = newFile;
         //cout << sum << endl;
         //cout << hashTable[sum].title << endl;
         
@@ -50,56 +50,60 @@ void HashTable::insertMovie(string title, int year)
         current = &hashTable[sum];
         if (current -> next == NULL)
         {
-            current -> next = new Entry(title, year);
+            current -> next = &newFile;
             //cout << sum << endl;
             //cout << hashTable[sum].next -> title << endl;
         } else{
-            while(current -> next -> title != "")
+            while(current -> next -> name != "")
             {
                 current = current -> next;
             }
-            current -> next = new Entry(title, year);
+            current -> next = &newFile;
             // cout << sum << endl;
             //cout << hashTable[sum].next -> title << endl;
         }
     }
     
 }
-void HashTable::findMovie(string title)
+void HashTable::findEntry(string name)
 {
-    Entry* userMovie = NULL;
+    Entry* userEntry = NULL;
     Entry* current = NULL;
     int sum = 0;
-    for(int i = 1; i < title.length(); i++)
+    for(int i = 1; i < name.length(); i++)
     {
-        sum = sum + title[i];
+        sum = sum + name[i];
     }
     sum = sum % tableSize;
-    if(hashTable[sum].title.length() > 0)
+    if(hashTable[sum].name.length() > 0)
     {
-        if(hashTable[sum].title == title)
+        if(hashTable[sum].name == name)
         {
-            userMovie = &hashTable[sum];
+            userEntry = &hashTable[sum];
         }else{
-            while(current -> title.length() > 0)
+            while(current -> name.length() > 0)
             {
-                if(current -> title == title)
+                if(current -> name == name)
                 {
-                    userMovie = current;
+                    userEntry = current;
                 }else{
                     current = current -> next;
                 }
             }
         }
     }
-    if(userMovie == NULL)
+    if(userEntry == NULL)
     {
         cout << "not found" << endl;
     } else {
-        cout << sum << ":" << userMovie -> title << ":" << userMovie -> year << endl;
+        cout << sum << "|" << userEntry -> name << endl;
+        cout << " |" << userEntry -> date << endl;
+        string displayAddy = userEntry -> address.encoded();
+        cout << " |" << displayAddy << endl;
     }
     
 }
+/*
 Movie* HashTable::sort(Movie* list, int x, int i)
 {
     for (int j = 0; j < x; j++)
@@ -181,53 +185,38 @@ void HashTable::shuffle(Movie* a, Movie* b)
 
 void HashTable::sort(int i)
 {
-    Movie* current;
+    Entry* current;
     current = &hashTable[i];
     while(current -> next != NULL)
     {
         // hashTable[i].length;
     }
 }
-void HashTable::printInventory()
+*/
+
+void HashTable::printEntries()
 {
     int i = 0;
-    int x = 0;
-    Movie* checker = NULL;
+    Entry* checker = NULL;
     while(i < tableSize)
     {
         
         
-        if(hashTable[i].next == NULL && hashTable[i].year > 0)
+        if(hashTable[i].next == NULL && hashTable[i].date != "0")
         {
-            cout << i << ":" << hashTable[i].title << ":" << hashTable[i].year << endl;
+            cout << i << ":" << hashTable[i].name << ":" << hashTable[i].date << endl;
             checker = &hashTable[i];
             i++;
-        }else if( hashTable[i].next != NULL && hashTable[i].year > 0){
+        }else if( hashTable[i].next != NULL && hashTable[i].date != "0"){
             
             checker = &hashTable[i];
-            Movie* current = &hashTable[i];
-            while(current ->next != NULL)
-            {
-                x++;
-                current = current -> next;
-            }
-            x++;
-            Movie* list = new Movie[x];
-            current = &hashTable[i];
-            int count = 0;
+            Entry* current = &hashTable[i];
             while(current -> next != NULL)
             {
-                list[count] = *current;
+                cout << current -> name << endl;
                 current = current -> next;
-                count++;
-                
             }
-            list[count] = *current;
-            for(int vv = 0; vv < x; vv++)
-            {
-                list = sort(list, x, i);
-            }
-            delete[] list;
+            cout << current -> name << endl;
             
             
             

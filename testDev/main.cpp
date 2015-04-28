@@ -7,6 +7,7 @@
 //
 //#include<json/json.h>
 #include "helper.h"
+#include "HashTable.h"
 #include <iostream>
 #include <fstream>
 #include <functional>
@@ -47,8 +48,9 @@ using namespace bc::explorer::primitives;
 
 
 int main(int argc, const char * argv[]) {
-
+    HashTable fileTable(10);
     int menuChoice = 0;
+    
     
     while(menuChoice < 4)
     {
@@ -56,7 +58,30 @@ int main(int argc, const char * argv[]) {
 
         if(menuChoice == 1)
         {
-            HashtoAddress();
+            string name;
+            cout << "Enter a File Name" << endl;
+            cin.ignore(1000, '\n');
+            getline(cin, name);
+            payment_address fileAddress;
+            hash_digest fileHash;
+            cout << "Enter the date" << endl;
+            string date;
+            getline(cin, date);
+            fileAddress = HashtoAddress();
+            Entry newFile(name, fileAddress, fileHash, date);
+            fileTable.insertEntry(newFile);
+            cout << newFile.address.encoded() << endl;
+            
+        }else if(menuChoice == 2){
+            string searchName;
+            cout << "Enter a File Name to Search" << endl;
+            cin.ignore(1000, '\n');
+            getline(cin, searchName);
+            fileTable.findEntry(searchName);
+            
+            
+        }else if(menuChoice == 3){
+            fileTable.printEntries();
         }
         
     }

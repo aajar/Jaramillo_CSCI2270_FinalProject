@@ -7,7 +7,7 @@
 //
 
 #include "helper.h"
-#incliude "HashTable.h"
+#include "HashTable.h"
 
 #include <iostream>
 #include <fstream>
@@ -51,18 +51,22 @@ int menuChooser()
 {
     cout << "====Main Menu =====" << endl;
     cout << "1. Get Hashed Address" << endl;
-    cout << "2. search saved hashes" << endl;
-    cout << "3. show hash information" << endl;
+    cout << "2. Search saved hashes" << endl;
+    cout << "3. Show all entries" << endl;
     cout << "4. Exit" << endl;
     
     int menuChoice;
     cin >> menuChoice;
     return menuChoice;
 }
-
+hash_digest fileHash()
+{
+    data_chunk data = decode_hex("Aaron Jaramillo");
+    hash_digest shaed = sha256_hash(data);
+    return shaed;
+}
 payment_address HashtoAddress()
 {
-
     data_chunk data = decode_hex("Aaron Jaramillo");
     hash_digest shaed = sha256_hash(data);
     payment_address hashAddy(uint8_t(1), ripemd160_hash(shaed));

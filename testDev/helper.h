@@ -43,7 +43,7 @@ using namespace bc::explorer::primitives;
 void displayMenu();
 
 int menuChooser();
-
+hash_digest fileHash();
 payment_address HashtoAddress();
 
 

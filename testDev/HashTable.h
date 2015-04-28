@@ -42,18 +42,21 @@ struct Entry{
     string name;
     payment_address address;
     hash_digest fileHash;
-    std::string date;
-    Entry *next;
+    string date;
+    Entry* next;
     
     Entry(){
+        date = "0";
+        next = NULL;
     };
     
-    Entry(string in_title, payment_address address, hash_digest fileHash,string date)
-    {        name = in_title;
-
-        address = address;
-        fileHash = fileHash;
-        string = date;
+    Entry(string in_title, payment_address in_address, hash_digest userfileHash, string in_date)
+    {
+        name = in_title;
+        address = in_address;
+        fileHash = userfileHash;
+        date = in_date;
+        next = NULL;
         
     }
     
@@ -64,13 +67,12 @@ class HashTable
 public:
     HashTable(int);
     ~HashTable();
-    void insertMovie(std::string in_title, int year);
-    void findMovie(std::string in_title);
-    void deleteMovie(std::string in_title);
-    void printInventory();
-    void sort(int i);
-    void shuffle(Entry*, Entry*);
-    Movie* sort(Entry*, int, int);
+    void insertEntry(Entry);
+    void findEntry(string);
+    //void deleteMovie(string in_title);
+    void printEntries();
+    //void sort(int i);
+    //void shuffle(Entry*, Entry*);
 protected:
 private:
     Entry* hashTable;
