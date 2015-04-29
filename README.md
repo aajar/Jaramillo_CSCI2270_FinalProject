@@ -39,3 +39,11 @@ System Requirements
 
 
 
+Open Issues/Bugs
+
+The delete function in hashTable has an error causing the rogram to break.
+
+using OP_RETURN is the optimal method for embedding data in the blockchain because it doesn't creat an unspendable output in the UTXO pool for miners. The function for connecting to obelisk is broken. 
+
+the function to read in a file and hash it directly in the program is buggy so it is currently non functional.
+
