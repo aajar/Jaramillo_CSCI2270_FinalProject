@@ -50,6 +50,7 @@ int main(int argc, const char * argv[]) {
             string name;
             cout << "Go to http://hash.online-convert.com/sha256-generator and generate a hash of your file, then enter the files hash" << endl;
             string enteredHash;
+            cin.ignore(1000, '\n');
             getline(cin, enteredHash);
             data_chunk hash = decode_hex(enteredHash);
             cout << "Enter a File Nickname" << endl;
@@ -61,10 +62,10 @@ int main(int argc, const char * argv[]) {
             getline(cin, date);
             //data_chunk fileByte = readFileBytes(filename);
             data_chunk filehash = hash;
-            hash_digest newhash = fileHasher(filehash);
+            //hash_digest newhash = fileHasher(filehash);
 
             fileAddress = HashtoAddress(hash);
-            Entry newFile(name, fileAddress, newhash, date);
+            Entry newFile(name, fileAddress, sha256_hash(hash), date);
             fileTable.insertEntry(newFile);
             cout << newFile.address.encoded() << endl;
             
