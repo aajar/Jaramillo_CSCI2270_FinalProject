@@ -171,7 +171,8 @@ void HashTable::deleteEntry(string name)
     {
         if (userEntry -> next == NULL)
         {
-           delete &userEntry;
+           delete userEntry;
+            userEntry = NULL;
         }else {
             userEntry = userEntry -> next;
         }
@@ -185,7 +186,8 @@ void HashTable::deleteEntry(string name)
             current = current -> next;
         }
         previous -> next = current -> next;
-        delete &current;
+        delete current;
+        current = NULL;
         
     }
     
