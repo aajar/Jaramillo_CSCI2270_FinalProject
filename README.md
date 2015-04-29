@@ -9,7 +9,21 @@ ShaNotary is a crypto graphic proof-of-existence program using the bitcoin block
 
 How to Run
 
-First, Follow the on screen menu to create a bitcoin address from the file hash. then send a small amount of bitcoin to the address(these coins are irretrivable). you can verify that your btc adress recieved the transaction by loking the address up on blockchain.info. 
+to compile the code and its dependencies run in the command line 
+
+    $g++ main.cpp helper.h helper.cpp HashTable.h HashTable.cpp $(pkg-config --cflags --libs libbitcoin)
+
+1. First,Got to http://hash.online-convert.com/sha256-generator and generate a hash of your file, copy the hex          formatted hash. 
+
+2. Follow the on screen menu to create a bitcoin address from the file hash. 
+
+3. use libbitcoin command line command 
+
+        $bx address-validate <address> 
+        
+        to check that the address given is a valid bitcoin address. 
+
+4. then send a small amount of bitcoin to the address(these coins are irretrivable). you can verify that your btc address recieved the transaction by loking the address up on blockchain.info. 
 
 
 Dependencies
