@@ -17,7 +17,7 @@ to compile the code and its dependencies run in the command line
 
 2. Follow the on screen menu to create a bitcoin address from the file hash. 
 
-3. use libbitcoin command line command 
+3. use libbitcoin command line command in a seperate 
 
         $bx address-validate <address> 
         
@@ -25,8 +25,11 @@ to compile the code and its dependencies run in the command line
 
 4. then send a small amount of bitcoin to the address(these coins are irretrivable). you can verify that your btc address recieved the transaction by loking the address up on blockchain.info. 
 
+5. To prove the existence of a file on a certain date, generate the address using the same method and verify that the address exists and recieved a transaction on a certain date via blockchain.info 
+
 
 Dependencies
+
 This project uses the c++ library libbitcoin and libbitcoin-explorer; Building libbitcoin-explorer from source installs the libbitcoin library as well as the libbitcoin-explorer command line tools. 
 go to https://github.com/libbitcoin/libbitcoin-explorer and follw the instructions in the readme for your specific machine. 
 
