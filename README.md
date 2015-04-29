@@ -5,7 +5,7 @@ ShaNotary Project
 
 Project Summary 
 
-ShaNotary is a crypto graphic proof-of-existence program using the bitcoin blockchain. ShaNotary takes the sha256 hash of a file and hashes it using ripemd160 and then encoded the resulting hash to a bitcoin address, once a transaction is sent to the address it is permenantly recorded on the blockchain. ShaNotary uses libbitcoin and libbitcoin-explorer for bitcoin hash functions. 
+ShaNotary is a cryptographic proof-of-existence program using the bitcoin blockchain. ShaNotary takes the sha256 hash of a file and hashes it using ripemd160 and then encoded the resulting hash to a bitcoin address, once a transaction is sent to the address it is permenantly recorded on the blockchain. ShaNotary uses libbitcoin and libbitcoin-explorer for bitcoin hash functions. 
 
 How to Run
 
