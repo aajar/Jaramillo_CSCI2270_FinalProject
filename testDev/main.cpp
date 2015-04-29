@@ -54,7 +54,6 @@ int main(int argc, const char * argv[]) {
             getline(cin, enteredHash);
             data_chunk hash = decode_hex(enteredHash);
             cout << "Enter a File Nickname" << endl;
-            cin.ignore(1000, '\n');
             getline(cin, name);
             payment_address fileAddress;
             cout << "Enter the date" << endl;

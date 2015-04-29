@@ -107,7 +107,7 @@ payment_address HashtoAddress(data_chunk fileByte)
     
     hash_digest shaed = sha256_hash(fileByte);
     payment_address hashAddy(uint8_t(1), ripemd160_hash(shaed));
-    cout << hashAddy.encoded() << endl;
+    //cout << hashAddy.encoded() << endl;
     
     return hashAddy;
 }
