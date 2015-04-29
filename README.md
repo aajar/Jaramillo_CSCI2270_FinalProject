@@ -31,7 +31,7 @@ to compile the code and its dependencies run in the command line
 Dependencies
 
 This project uses the c++ library libbitcoin and libbitcoin-explorer; Building libbitcoin-explorer from source installs the libbitcoin library as well as the libbitcoin-explorer command line tools. 
-go to https://github.com/libbitcoin/libbitcoin-explorer and follow the instructions in the readme for your specific machine. 
+go to https://github.com/libbitcoin/libbitcoin-explorer and follow the instructions in the readme for your specific machine. to install just the libbitcoin library go to https://github.com/libbitcoin/libbitcoin and follow the instructions in the read me for your specific machine. 
 
 
 
