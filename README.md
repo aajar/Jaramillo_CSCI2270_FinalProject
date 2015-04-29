@@ -13,7 +13,7 @@ to compile the code and its dependencies run in the command line
 
     $g++ main.cpp helper.h helper.cpp HashTable.h HashTable.cpp $(pkg-config --cflags --libs libbitcoin)
 
-1. First,Got to http://hash.online-convert.com/sha256-generator and generate a hash of your file, copy the hex          formatted hash. 
+1. First, Go to http://hash.online-convert.com/sha256-generator and generate a hash of your file, copy the hex          formatted hash. 
 
 2. Follow the on screen menu to create a bitcoin address from the file hash. 
 
@@ -31,7 +31,7 @@ to compile the code and its dependencies run in the command line
 Dependencies
 
 This project uses the c++ library libbitcoin and libbitcoin-explorer; Building libbitcoin-explorer from source installs the libbitcoin library as well as the libbitcoin-explorer command line tools. 
-go to https://github.com/libbitcoin/libbitcoin-explorer and follw the instructions in the readme for your specific machine. 
+go to https://github.com/libbitcoin/libbitcoin-explorer and follow the instructions in the readme for your specific machine. 
 
 
 
