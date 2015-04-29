@@ -17,7 +17,7 @@ to compile the code and its dependencies run in the command line
 
 2. Follow the on screen menu to create a bitcoin address from the file hash. 
 
-3. use libbitcoin command line command in a seperate 
+3. use libbitcoin command line command in a seperate terminal
 
         $bx address-validate <address> 
         
