@@ -71,6 +71,7 @@ int menuChooser()
  
  
  */
+/*
 data_chunk readFileBytes(string name)
 {
     basic_ifstream<uint8_t> fl(name);
@@ -85,7 +86,7 @@ data_chunk readFileBytes(string name)
     fl.close();
     return fileChunk;
 }
-
+*/
 hash_digest filehasher(data_chunk fileData)
 {
     hash_digest shaed = sha256_hash(fileData);

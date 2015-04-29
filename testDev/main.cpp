@@ -44,9 +44,9 @@ int main(int argc, const char * argv[]) {
 
         if(menuChoice == 1)
         {
-            string filename;
-            cout << "Enter a File Name" << endl;
-            getline(cin, filename);
+            //string filename;
+            //cout << "Enter a File Name" << endl;
+            //getline(cin, filename);
             string name;
             cout << "Go to http://hash.online-convert.com/sha256-generator and generate a hash of your file, then enter the files hash" << endl;
             string enteredHash;
