@@ -23,7 +23,7 @@ to compile the code and its dependencies run in the command line
         
         to check that the address given is a valid bitcoin address. 
 
-4. then send a small amount of bitcoin to the address(these coins are irretrivable). you can verify that your btc address recieved the transaction by loking the address up on blockchain.info. 
+4. then send a small amount of bitcoin to the address(these coins are irretrivable). you can verify that your btc address recieved the transaction by looking the address up on blockchain.info. 
 
 5. To prove the existence of a file on a certain date, generate the address using the same method and verify that the address exists and recieved a transaction on a certain date via blockchain.info 
 
@@ -41,9 +41,9 @@ System Requirements
 
 Open Issues/Bugs
 
-The delete function in hashTable has an error causing the rogram to break.
+The delete function in hashTable has an error causing the program to break.
 
-using OP_RETURN is the optimal method for embedding data in the blockchain because it doesn't creat an unspendable output in the UTXO pool for miners. The function for connecting to obelisk is broken. 
+using OP_RETURN is the optimal method for embedding data in the blockchain because it doesn't create an unspendable output in the UTXO pool for miners but the function for connecting to obelisk is doesn't work. 
 
 the function to read in a file and hash it directly in the program is buggy so it is currently non functional.
 
